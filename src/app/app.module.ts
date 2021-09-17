@@ -15,7 +15,7 @@ import {UserSidebarComponent} from './components/page/user-layouts/user-sidebar/
 import {UserDashboardComponent} from './components/page/user-dashboard/user-dashboard.component';
 import {LoginComponent} from './components/login/login.component';
 import {RegisterComponent} from './components/register/register.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {ProfileComponent} from './components/admin/profile/profile.component';
 import {EditProfileComponent} from './components/admin/profile/edit-profile/edit-profile.component';
@@ -25,6 +25,13 @@ import {ProfileUserComponent} from './components/page/profile-user/profile-user.
 import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {environment} from "../environments/environment";
+import { AdminCategoryComponent } from './components/admin/admin-category/admin-category.component';
+import { AdminBrandComponent } from './components/admin/admin-brand/admin-brand.component';
+import { EditBrandComponent } from './components/admin/admin-brand/edit-brand/edit-brand.component';
+import { EditCategoryComponent } from './components/admin/admin-category/edit-category/edit-category.component';
+import { CreateCategoryComponent } from './components/admin/admin-category/create-category/create-category.component';
+import {NgxPaginationModule} from "ngx-pagination";
+import { CreateBrandComponent } from './components/admin/admin-brand/create-brand/create-brand.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +50,13 @@ import {environment} from "../environments/environment";
     RegisterComponent,
     ProfileComponent,
     EditProfileComponent,
-    ProfileUserComponent
+    ProfileUserComponent,
+    AdminCategoryComponent,
+    AdminBrandComponent,
+    EditBrandComponent,
+    EditCategoryComponent,
+    CreateCategoryComponent,
+    CreateBrandComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +66,9 @@ import {environment} from "../environments/environment";
     BrowserAnimationsModule,
     MatDialogModule,
     AngularFireStorageModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
+    NgxPaginationModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
